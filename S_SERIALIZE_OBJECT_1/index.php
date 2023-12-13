@@ -2,8 +2,10 @@
 
 include('student.php');
 
-$content = file_get_contents('variable');
 
-$student = unserialize($content);
 
-$student -> hello();
+$rohit = new Student("Rohit");
+$rohit -> greet();
+
+$rohit_sz= serialize($rohit);
+file_put_contents('variable', $rohit_sz); 
